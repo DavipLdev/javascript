@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+<body>
+   
+
+    <script>
+    
+        
+        
+        function Caneta(preco, cor) {
+
+            var color = cor || 'black'
+
+            this.preco = preco || 3
+              this.mudarcor = function(cor) {
+                 if (cor !== 'red' && cor !== 'blue' && cor !== 'black') {
+                     return
+                 }
+                   color = cor
+             }
+
+            this.pegarcor = function () {
+            return color;
+            }    
+
+        }
+               var caneta1 = new Caneta(2, 'red')
+               console.log(caneta1)
+            
+
+    </script>
+</body>
+</html>

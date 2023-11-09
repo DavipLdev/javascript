@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+     
+
+    <script>
+        (function () {
+             function calcularIMC(peso, altura) {
+                 
+                return peso / (altura * altura)
+             }
+
+             function clacificaIMC(imc){
+                 
+                if (imc <= 16.9 ) {
+                    return('muito baixo do peso')
+                }else if (imc <= 18.4) {
+                    return('abaixo do peso')
+                }else if(imc <= 24.9){
+                    return('normal')
+                }else if(imc <= 29.9){
+                    return('acima do peso')
+                }else if(imc <= 34.9){
+                    return('obesidade 1')
+                }else if(imc <= 40){
+                    return('obesidade 2')
+                }else{
+                    return('obesidade 3')
+                }
+             }
+
+             var peso = '5'
+            
+             var altura = '1'
+            
+
+             var imc = calcularIMC(peso, altura)
+             var clasificacao = clacificaIMC(clacificaIMC)
+
+             console.log('clasificacao: ',clasificacao)
+
+        })();
+    </script>
+</body>
+</html>

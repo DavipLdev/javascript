@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="btn1" onclick="clicou()">botao1</button>
+    <button id="btn2">botao2</button>
+    <button id="btn3">botao3</button>
+
+
+    <div class="conteiner">
+        <div id="d1" style="background-color: red; padding: 25px;">
+            text dentro da div
+            <span id="span" style="background-color: yellow;">text dentro da span</span>
+        </div>
+    </div>
+
+
+
+        <div class="conteiner">
+            <ul>
+                <li>aitem 1</li>
+                <li>aitem 2</li>
+                <li>aitem 3</li>
+            </ul>
+        </div>
+
+
+    <script>
+
+         var btn2 = document.getElementById('btn2')
+           var btn3 = document.getElementById('btn3')
+
+            btn2.onclick = clicou()
+
+                function clicou() {
+                  // alert('clicou')
+                  return function () {
+                    alert('clicou 2')
+                 }
+              }
+
+         btn3.addEventListener("click", function () {
+            alert('clicou com dom level 2')
+         })
+
+
+         var d1 = document.querySelector('#d1')
+           var dspan = document.querySelector('#span')
+
+                d1.addEventListener("click", function () {
+                   alert('clicou no text da div')
+               })
+
+                    dspan.addEventListener("click", function (e) {
+                       alert('clicou no text da span')
+                     e.stopPropagation()
+                    })
+
+
+
+         document.addEventListener('click', function(evt) {
+             console.log('clicou no documento')
+              console.log(evt)
+               console.log(evt.currentTarget)
+              console.log(this)
+             console.log(evt.target)
+         }),true
+
+
+         var $ul = document.querySelector('ul')
+           var $lis = document.querySelector('li')
+
+             $ul.addEventListener('click', function (e) {
+                e.stopPropagation
+                  console.log('clicou na li')
+              })
+                
+    </script>
+</body>
+</html>

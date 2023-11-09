@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        var x = [0]
+        function mudarX(x) {
+            var y = x
+            y.push(2)
+        }
+        mudarX(x)
+
+        console.log('-----------')
+
+        var n = 0
+        function mudarn(n) {
+            var n1 = n
+            console.log(++n1)
+        }
+        mudarn(n)
+
+        console.log('--------------')
+
+        var caneta = {
+            nome: 'canetas',
+            cor: '',
+            cor2: '',
+
+            mudarcor: function(cor) {
+                this.cor = cor
+            },
+
+            mudarcor2:function(cor) {
+                this.cor2 = cor
+            }
+        }
+        
+        console.log(caneta)
+         caneta.mudarcor('azul')
+         caneta.mudarcor2('branca')
+         
+
+    </script>
+</body>
+</html>

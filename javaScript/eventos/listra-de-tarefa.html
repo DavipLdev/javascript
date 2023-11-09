@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: black;
+            font-family: sans-serif;
+        }
+        div{
+            margin-left: 10rem;
+            margin-top: 1.7rem;
+        }
+        h1{
+            color: rgb(234, 234, 234);
+        }
+        input{
+            padding: .4rem;
+            border-radius: 1.2rem;
+        }
+        button{
+            margin-top: .7rem;
+            border-radius: 2rem;
+            background-color: red;
+            border: none;
+            padding: .5rem .7rem;
+            color: white;
+        }
+        ol{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            background-color: rgba(26, 26, 147, 0.284);
+            width: 20%;
+        }
+        li{
+            color: rgb(255, 255, 255);
+            font-size: 1.3em;
+            
+        }
+        .done{
+            text-decoration: line-through;
+            color: #856e6e;
+        }
+      
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h1>adicionar tarefas</h1>
+         <input type="text" id="txttesk" placeholder="adicionar tarefa">
+
+    <button id="btn">cadastrar tarefa</button>
+    <button id="btnapagar">apagar tarefa</button>
+
+   <ol>
+    
+   </ol>
+    </div>
+   
+
+    <script>
+     var $ul = document.querySelector('ol')
+     var $txttesk = document.querySelector('#txttesk')
+     var $lis = $ul.querySelectorAll('li')
+     var $btn = document.querySelector('#btn')
+     var $btnapagar = document.querySelector('#btnapagar')
+
+
+
+     //marcar a tarefa feita
+     
+     $lis = addEventListener('click', function (e) {
+        if (e.target.nodeName === 'LI') {
+            
+            remover(e.target)
+        }
+     })
+
+     function remover(li) {
+        if (confirm('vc quer excluir a tarefa  '+ li.textContent + '?')) {
+           li.parentNode.removeChild(li)
+        }
+     }
+
+     function togle(li) {
+        li.classList.toggle('done')
+     }
+       
+     
+     
+
+
+
+
+    //adicionra tarefa com a tecla "enter"
+     $btn.addEventListener('click', addtesk)
+     $txttesk.addEventListener('keyup', function (e) {
+        if (e.keyCode === 13) {
+            addtesk()     
+        }
+     })
+   
+
+     //adicionar a tarefa
+     function addtesk() {
+            
+                
+                var li = document.createElement('li')
+                var text = document.createTextNode($txttesk.value)
+
+                li.appendChild(text)
+                $ul.appendChild(li)
+
+                $txttesk.value = ""
+                $txttesk.focus()
+
+                
+             }
+
+
+        
+    </script>
+</body>
+</html>

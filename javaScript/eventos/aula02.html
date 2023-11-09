@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label for="txtuser">usuario</label>
+        <input type="text" id="txtuser" name="user" required>
+   <br>
+        <label for="txtpass">senha</label>
+        <input type="password" id="txtpass" id="txtpass" name="pass" required>
+   <br>
+        <button type="submit" id="btn">enviar</button>
+    </form>
+
+
+    <script>
+        
+        (function() {
+            var $form = document.querySelector('form')
+            var $txtuser = document.getElementById('txtuser')
+            var $txtpass = document.getElementById('txtpass')
+
+            var $btn = document.getElementById('btn')
+            
+             
+
+            $form.addEventListener('submit', function(e) {
+                 if (!$txtuser.value || !$txtuser.value){
+                     alert('ta tudo vazio maluco')
+                    
+                 }
+                
+            })
+
+        })();
+    </script>
+</body>
+</html>

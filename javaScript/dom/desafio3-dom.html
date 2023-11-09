@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+         <input type="text" id="nome" placeholder="digite seu nome"> <button onclick="btn()">aperta</button>
+
+         <div id="output"></div>
+
+         <script>
+
+            var nome = document.querySelector('#nome')
+
+
+            function btn() {
+                 var resultado = nome.value
+                 document.querySelector('#output').innerHTML = 'bem vindo, <b>'+resultado+ '<b>'
+            }
+           
+         </script>
+</body>
+</html>

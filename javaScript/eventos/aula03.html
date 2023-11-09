@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ss222ssss</h1>
+     <textarea id="msg" cols="80" maxlength="100"></textarea>
+     <br>
+     <div id="restaconteiner" style="display: none;">
+           restaam <span id="resta"></span> cararteres
+     </div>
+ 
+
+
+
+     <script>
+
+    (function () {
+
+          var $txtmsg = document.getElementById('msg')
+          var $resta = document.getElementById('resta')
+          var $restaconteiner = document.getElementById('restaconteiner')
+
+          var maxima = $txtmsg.maxLength;
+
+          $restaconteiner.style.display = 'block'
+
+          $resta.textContent = maxima
+
+          $txtmsg.addEventListener('input',  function checklength(e) {
+             var numerodigitado = this.value.length
+             $resta.textContent = maxima - numerodigitado
+        })   
+             
+       
+       
+    })();
+     
+     </script>
+</body>
+</html>

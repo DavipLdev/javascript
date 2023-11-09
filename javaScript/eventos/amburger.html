@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amburger</title>
+    <style>
+        body{
+            font-family: sans-serif;
+            margin: 0;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: blue;
+        }
+        nav{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        nav li{
+            list-style: none;
+            font-size: 1.5em;
+        }
+        .amburger{
+            display: none;
+            cursor: pointer;
+        }
+        .bar{
+            display: block;
+            width: 28px;
+            height: 3px;
+            border-radius: 2px;
+            margin: 5px auto;
+            background-color: rgb(0, 0, 0);
+            transition: all 0.3s ease-in-out;
+        }
+        @media (max-width:768px) {
+            .amburger{
+                display: block;
+            }
+            .amburger.active .bar:nth-child(2){
+                opacity: 0;
+            }
+            .amburger.active .bar:nth-child(1){
+                transform: translateY(8px) rotate(45deg);
+            }
+            .amburger.active .bar:nth-child(3){
+                transform: translateY(-8px) rotate(-45deg);
+            } 
+          nav{
+            position: fixed;
+            top: 80px;
+            right: 100%;
+            flex-direction: column;
+            background-color: black;
+            width: 100%;
+            gap: 2rem;
+            padding: .9rem;
+            color: white;
+            transition: 1s;
+          }
+          nav.active{
+            left: 0;
+            transition: 1s; 
+          }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>logo</h1>
+
+        <nav>
+            <li>menu</li>
+            <li>home</li>
+            <li>login</li>
+        </nav>
+        <div class="amburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+         </div>
+    </header>
+
+    <script>
+
+       
+            var $amburger = document.querySelector('.amburger')
+            var $nav = document.querySelector('nav')
+
+            $amburger.addEventListener('click', () => {
+                $amburger.classList.toggle('active')
+                $nav.classList.toggle('active')
+            })
+      
+
+    </script>
+</body>
+</html>
