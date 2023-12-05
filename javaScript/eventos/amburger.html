@@ -19,6 +19,7 @@
             display: flex;
             align-items: center;
             gap: 2rem;
+            transition: 1s;
         }
         nav li{
             list-style: none;
@@ -35,7 +36,7 @@
             border-radius: 2px;
             margin: 5px auto;
             background-color: rgb(0, 0, 0);
-            transition: all 0.3s ease-in-out;
+            transition: all 3s ease-in-out;
         }
         @media (max-width:768px) {
             .amburger{
@@ -64,7 +65,7 @@
           }
           nav.active{
             left: 0;
-            transition: 1s; 
+            transition: 4s; 
           }
         }
     </style>
@@ -85,9 +86,7 @@
          </div>
     </header>
 
-    <script>
-
-       
+    <script>     
             var $amburger = document.querySelector('.amburger')
             var $nav = document.querySelector('nav')
 
@@ -95,8 +94,6 @@
                 $amburger.classList.toggle('active')
                 $nav.classList.toggle('active')
             })
-      
-
     </script>
 </body>
 </html>
